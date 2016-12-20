@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all # N+1 問題
+    # @articles = Article.all # N+1 問題
     @articles = Article.all.includes(:user) # WHERE IN を利用して回避
   end
 
